@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View, Image, ScrollView, ImageBackground } from 'react-native';
+import Swiper from 'react-native-swiper';
 
 import { planetas } from './planetas'
-import {Planetas} from './PlanetasPost'
+import { Planetas } from './PlanetasPost'
 
 export default function App() {
   return (
@@ -17,14 +18,20 @@ export default function App() {
         <Text style={styles.header}>Vamos Explorar!</Text>
       </View>
 
-      <ScrollView>
-        {
-          planetas.map((planetas, index) => (
-            <Planetas key= {index} planetas={planetas}></Planetas>
-          ))
-        }
-      </ScrollView>
-      
+      <ImageBackground
+        source={{ uri: 'https://aventurasnahistoria.com.br/media/uploads/hard_news/design_sem_nome_4_9Syquv8.jpg' }}
+        style={styles.backgroundImage}>
+        <Swiper showsButtons loop={false}>
+          {
+            planetas.map((planetas, index) => (
+              <ScrollView>
+                <Planetas key={index} planetas={planetas}></Planetas>
+              </ScrollView>
+            ))
+          }
+        </Swiper>
+      </ImageBackground>
+
     </SafeAreaView>
   );
 }
@@ -43,9 +50,15 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#000',
-    color: '#FFF',
+    color: '#f7ff00',
     fontSize: 24,
     flexDirection: 'row',
     padding: 10,
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    alignItems: 'center',
   }
 });

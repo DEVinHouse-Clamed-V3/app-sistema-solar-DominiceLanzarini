@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     paddingTop: 20
   },
   nome: {
-    color: '#000',
+    color: '#FFF',
     fontSize: 30,
     fontWeight: 'bold'
   },
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   descricaoBreve: {
-    color: '#000',
+    color: '#f7ff00',
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center'
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   texto: {
-    color: '#000',
+    color: '#f7ff00',
     fontSize: 18,
     textAlign: 'center'
   }
